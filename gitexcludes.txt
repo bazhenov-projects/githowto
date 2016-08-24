@@ -1,0 +1,23 @@
+1. Перейти в домашнюю директорию
+	cd ~
+
+2. Создать файл .gitexcludes
+	touch .gitexcludes
+
+3. Записать в файл .gitexcludes то, что хотим игнорировать
+(видеть в списках неотслеживаемых)
+	echo > .gitexcludes __history
+	echo > .gitexcludes *.exe
+	echo > .gitexcludes *.obj	
+	...
+Примечание:
+	echo > перезаписывает содержимое файла
+	echo >> добавляет в конец файла	
+
+4. Прописать имя данного файла в настройках
+	git config --global core.excludesfile ~/.gitexcludes
+	После этой операции в файле ~/.gitconfig появляется запись
+	[core]
+		excludesfile = C:/Documents and Settings/ALEKSANDR-PC/.gitexcludes
+	В этом можно убедиться посмотрев его содержимое
+		cat .gitconfig
